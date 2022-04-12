@@ -52,4 +52,10 @@ public String formDelete(Model model,@PathVariable int id){
     
 
 }
+@RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String confirmDelete(@RequestParam("id") int id) {
+        livrosRepo.deleteById(id);
+        return "redirect:/livro/list";
+    }
+
 }
